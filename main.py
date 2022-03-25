@@ -5,8 +5,8 @@ from sys import exit
 import sys
 import os
 #Save paths for audio and video files
-AUDIO_PATH = '~/Music/download'
-VIDEO_PATH = '~/Videos/download/pythonhelp'
+AUDIO_PATH = '~/Music/'
+VIDEO_PATH = '~/Videos/'
 #requesting input from terminal
 AudioVideo=input("Video or Audio:")
 #audio downooader
