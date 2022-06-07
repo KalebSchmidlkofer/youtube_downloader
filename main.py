@@ -4,8 +4,8 @@ from sys import exit
 import sys
 import os
 from variables import ydl_optsA, ydl_optsB, errormessage
-            
-            
+
+
 # requesting input from terminal
 
 try:
@@ -19,8 +19,6 @@ try:
             f.close()            
             with yt_dlp.YoutubeDL(ydl_optsA) as ydl:
                 ydl.download([Download])
-
-        
         
         ### Video Downloader
         elif AudioVideo == 'video':
