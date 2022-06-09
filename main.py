@@ -26,12 +26,21 @@ try:
             f.close()
             with yt_dlp.YoutubeDL(ydl_optsB) as ydl:
                 ydl.download([Download])
-
+        elif AudioVideo == 'both':
+            print('Here what your gonna do is download')
+            print('both Audio and Video files at the same TIME!')
+            Download = input('Instert Video/Playlist url: ')
+            f = open('previousdownloads.txt', 'a')
+            f.write(f'{Download}')
+            f.close()
+            with yt_dlp.YoutubeDL(ydl_optsA) as ydl:
+                ydl.download([Download])
+            with yt_dlp.YoutubeDL(ydl_optsB) as ydl:
+                ydl.download([Download])
         else:
             print(f'{errormessage}')
 except KeyboardInterrupt:
     sys.exit(0)
-
 
 if __name__ == '__main__':
     os.execl(sys.executable,*([sys.executable]+sys.argv))
