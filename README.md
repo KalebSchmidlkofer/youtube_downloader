@@ -1,2 +1,4 @@
 # youtube_downloader
-Very simple run main.py and watch the magic happen.
+
+Simple Youtube Downloader using the [yt-dlp](https://github.com/yt-dlp/yt-dlp) library 
+
