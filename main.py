@@ -3,15 +3,15 @@ import yt_dlp
 from sys import exit
 import sys
 import os
-from variables import ydl_optsA, ydl_optsB, errormessage
+from variables import *
 
 # requesting input from terminal
 try:
     while True:
-        AudioVideo=input("Video or Audio: ").lower()
+        AudioVideo=input('Video or Audio or Both(.): ').lower()
         # audio downloader
         if AudioVideo == 'audio':
-            Download = input("Insert Video/playlist url: ")
+            Download = input('Insert Video/playlist url: ')
             f = open('previousdownloads.txt', 'a')
             f.write(f'{Download}\n')
             f.close()            
@@ -20,18 +20,19 @@ try:
         
         ### Video Downloader
         elif AudioVideo == 'video':
-            Download = input("Insert Video/playlist url: ")
+            Download = input('Insert Video/playlist url: ')
             f = open('previousdownloads.txt', 'a')
             f.write(f'{Download}\n')
             f.close()
             with yt_dlp.YoutubeDL(ydl_optsB) as ydl:
                 ydl.download([Download])
-        elif AudioVideo == 'both':
+        ### Video and Audio Downloader
+        elif AudioVideo == 'Both':
             print('Here what your gonna do is download')
             print('both Audio and Video files at the same TIME!')
             Download = input('Instert Video/Playlist url: ')
             f = open('previousdownloads.txt', 'a')
-            f.write(f'{Download}')
+            f.write(f'{Download}').lower()
             f.close()
             with yt_dlp.YoutubeDL(ydl_optsA) as ydl:
                 ydl.download([Download])
@@ -40,6 +41,7 @@ try:
         else:
             print(f'{errormessage}')
 except KeyboardInterrupt:
+    print('\n')
     sys.exit(0)
 
 if __name__ == '__main__':
