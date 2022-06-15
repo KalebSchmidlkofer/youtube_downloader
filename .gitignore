@@ -1,3 +1,5 @@
 .youtube/
 __pycache__
 previousdownloads.txt
+yt-dlg
+previousdownloadsAudio.txt
