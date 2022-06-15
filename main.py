@@ -1,10 +1,11 @@
 #!/home/kaleb/Coding/python/youtube_downloader/.youtube/bin/python3.10
-import yt_dlp
+import yt_dlp, sys, os
 from sys import exit
-import sys
-import os
 from variables import *
-# requesting input from terminal
+from ytmusicapi import YTMusic
+ytmusic = YTMusic()
+
+
 try:
     while True:
         AudioVideo=input('Video or Audio or Both: ').lower()
@@ -41,5 +42,6 @@ try:
 except KeyboardInterrupt:
     print('\n')
     sys.exit(0)
+
 if __name__ == '__main__':
     os.execl(sys.executable,*([sys.executable]+sys.argv))

@@ -26,4 +26,11 @@ ydl_optsB = {'format': 'remux/best',
             'ignoreerrors': True,
             'writesubtitles': True,
             'subtitle': '--write-sub --sub-lang en',         
-            'outtmpl': VIDEO_PATH + '/%(title)s.%(ext)s'}
+            'outtmpl': VIDEO_PATH + '/%(title)s.%(ext)s',
+            'ignoreerrors': True,
+            'postprocessors':[
+            {'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp4','preferredquality': '1080'},
+            {'key': 'FFmpegMetadata', 'add_metadata': 'True'},
+            {'key': 'EmbedThumbnail','already_have_thumbnail': False,}
+            ],
+            }
