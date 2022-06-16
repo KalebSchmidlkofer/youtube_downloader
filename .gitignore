@@ -5,5 +5,4 @@ yt-dlg
 previousdownloadsAudio.txt
 previousdownloadsVideo.txt
 headers_auth.json
-main.py
-variables.py
+
