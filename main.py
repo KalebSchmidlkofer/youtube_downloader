@@ -1,4 +1,3 @@
-#!/home/kaleb/Coding/python/youtube_downloader/.youtube/bin/python3.10
 import yt_dlp, sys, os
 from sys import exit
 from variables import *
